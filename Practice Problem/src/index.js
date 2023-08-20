@@ -30,7 +30,7 @@ function index(data) {
       .filter(Boolean)
       .forEach((word) => {
         if (!result[word]) {
-          result[word] = new Set(index);
+          result[word] = new Set([index]);
         } else {
           result[word].add(index);
         }
