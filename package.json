@@ -1,5 +1,6 @@
 {
   "name": "dsa-practice-question",
+  "type": "module",
   "version": "1.0.0",
   "description": "practice question for the DSA live interview, good luck!",
   "main": "index.js",
@@ -10,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest":"29.6.1"
+    "jest": "29.6.1"
   }
 }
