@@ -23,19 +23,31 @@ function index(data) {
   // if doesnt exist create new set with index
 
   const result = {};
-  data.forEach((line, index) => {
-    line
+  //declare result object
+  data.forEach((sentence, index) => {
+    //for each sentence (in other words index) of the Array
+    sentence
+      //make each word lowercase
       .toLowerCase()
-      .split(`/[\s.,';]/`)
+      //split using regex provided
+      .split(/[\s.,';]/)
+      // filter out empty strings
       .filter(Boolean)
+      //for each word in the array we made
       .forEach((word) => {
+        // if the word is not already in our result object
         if (!result[word]) {
+          // create the key and make a new set as the value starting with the curretn index
           result[word] = new Set([index]);
-        } else {
+        }
+        //if the word is alrerady in our object
+        else {
+          // add the index to the set at that key
           result[word].add(index);
         }
       });
   });
+  // create array from result iterate through array
   Object.entries(result).forEach(
     ([word, set]) => (result[word] = Array.from(set))
   );
